@@ -1,0 +1,7 @@
+import JWT from 'jsonwebtoken'
+const pubkey = process.env.NUXT_ACCESS_TOKEN_PUBLIC_KEY
+const token =
+  'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJxbkZrZDhlN3ExcSIsImlhdCI6MTcwNTY0OTEzMCwiZXhwIjoxNzA1Njc0MzMwfQ.ZJf3YvsO6X4wLC9YdZ3R4qQXUDs5ndP1Vp0DBgJFsVN7RRmndpUufiIEONI5EyICkLZmfAiWPLHvl_bsIkBDOdKq7Ho5lwBKekoP7YTkVpQJ3Bux0qR9kiw0iDKtFlAhDvj5gBujqdwM96hbsaKqhrayYA_cQyXkZKTrkVqOrtc_MlrafD-LQPfi5dc_Gjsg79yQu78cHte4kVChnASjwbwtFxMiwAG_UZLD9EjBfoDLmRCdoP_N-m2y1WsgcBN63bN0IbJ4Un1_qSAZhm0iRm8jprSpc1lMaRdtQWe5mR30f4453YEQDtTsQGfFdYv-AUrmyNlTeMJCo91fUd9jlg'
+
+const result = JWT.verify(token, pubkey, { algorithms: ['RS256'] })
+console.log(result)
